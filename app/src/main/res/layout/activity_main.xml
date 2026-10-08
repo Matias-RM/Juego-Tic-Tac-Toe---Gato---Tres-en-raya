@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E1E2E">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="52dp" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Turno de X"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Marcador -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvScorePlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tú: 0"
+                android:textColor="#4CAF50"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingEnd="20dp"/>
+
+            <TextView
+                android:id="@+id/tvScoreCPU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CPU: 0"
+                android:textColor="#FF5252"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Selector de modo -->
+        <RadioGroup
+            android:id="@+id/radioGroupMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <RadioButton
+                android:id="@+id/radioTwoPlayers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 Jugadores"
+                android:textColor="#FFFFFF"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/radioVsCPU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="vs CPU"
+                android:textColor="#FFFFFF"
+                android:layout_marginStart="16dp"/>
+        </RadioGroup>
+
+        <!-- Selector de dificultad (visible solo en modo CPU) -->
+        <LinearLayout
+            android:id="@+id/layoutDifficulty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dificultad: "
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/spinnerDifficulty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Tablero -->
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="3">
+
+            <Button android:id="@+id/btn0" style="@style/CellButton"/>
+            <Button android:id="@+id/btn1" style="@style/CellButton"/>
+            <Button android:id="@+id/btn2" style="@style/CellButton"/>
+            <Button android:id="@+id/btn3" style="@style/CellButton"/>
+            <Button android:id="@+id/btn4" style="@style/CellButton"/>
+            <Button android:id="@+id/btn5" style="@style/CellButton"/>
+            <Button android:id="@+id/btn6" style="@style/CellButton"/>
+            <Button android:id="@+id/btn7" style="@style/CellButton"/>
+            <Button android:id="@+id/btn8" style="@style/CellButton"/>
+        </GridLayout>
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nueva Partida"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnResetScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reiniciar Marcador"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#FF9800"
+            android:textColor="#FFFFFF"/>
+
+    </LinearLayout>
+</ScrollView>
